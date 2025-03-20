@@ -1,0 +1,29 @@
+version: '3.4'
+services:
+  founditbe-users-docker:
+    image: founditbe-users
+    container_name: founditbe-users-docker
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+      - PASSWORD_ENV_SEEDED=jadlljames
+    ports:
+      - 8080:80
+      - 8081:443
+    environment:
+      - PASSWORD_ENV_SEEDED=jadlljames
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=https://+:443;http://+:80
+      - ASPNETCORE_Kestrel__Certificates__Default__Password=jadlljames
+      - ASPNETCORE_Kestrel__Certificates__Default__Path=/https/aspnetapp.pfx
+    volumes:
+      - ~/.aspnet/https:/https:ro
+    networks:
+      - user-network
+
+networks:
+  user-network:
+    driver: bridge
+volumes:
+  postgresql-data:
