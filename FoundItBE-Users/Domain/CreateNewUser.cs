@@ -3,7 +3,7 @@ using FoundItBE_Users.Models;
 using Dapper;
 using Npgsql;
 
-namespace FoundItBE_Users.BusinessLayer;
+namespace FoundItBE_Users.Domain;
 
 public class CreateNewUser(IPostGresqlClient _postGresqlClient) : ICreateNewUser
 {

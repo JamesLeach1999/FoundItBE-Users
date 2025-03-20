@@ -24,11 +24,11 @@ public class Startup
         services.AddSwaggerGen();
 
         services.Configure<PostGresqlConnectionOptions>(Configuration.GetSection(PostGresqlConnectionOptions.PostGresqlOptionsKey));
-        services.AddSingleton<IMemoryCache>();
+        services.AddMemoryCache();
 
         services.AddInfrastructure();
-        services.AddBusinessLayer();
         services.AddDomainLayer();
+        services.AddBusinessLayer();
         services.AddValidation();
     }
 

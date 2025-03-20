@@ -1,6 +1,9 @@
-﻿namespace FoundItBE_Users.Domain;
+﻿using FoundItBE_Users.Models;
+
+namespace FoundItBE_Users.Domain;
 
 public interface IPostGresRepository
 {
-    Task GetUserFromDatabase(string username, string password);
+    Task CreateUser(UserReq user);
+    Task<User> GetUserFromDatabase(string username);
 }

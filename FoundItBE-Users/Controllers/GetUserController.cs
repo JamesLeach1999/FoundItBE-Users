@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using FoundItBE_Users.BusinessLayer;
 using FoundItBE_Users.Models;
 using FoundItBE_Users.Validation;
 using Microsoft.AspNetCore.Http.HttpResults;
@@ -11,7 +12,7 @@ namespace FoundItBE_Users.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class GetUserController(AbstractValidator<UserCredentials> userCredentialsValidator) : Controller
+public class GetUserController(AbstractValidator<UserCredentials> userCredentialsValidator, IUserService userService) : Controller
 {
     [HttpPost]
     [Produces(MediaTypeNames.Application.Json)]
@@ -25,6 +26,8 @@ public class GetUserController(AbstractValidator<UserCredentials> userCredential
         if (!validatedUser.IsValid) {
             return BadRequest();
         }
+
+        userService.GetUser(userCredentials);
 
         return Ok(userCredentials);
     }

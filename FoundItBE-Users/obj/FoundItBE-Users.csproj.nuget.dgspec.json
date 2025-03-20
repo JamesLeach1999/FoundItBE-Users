@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users.csproj": {}
+    "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users\\FoundItBE-Users.csproj": {}
   },
   "projects": {
-    "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users.csproj": {
+    "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users\\FoundItBE-Users.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users.csproj",
+        "projectUniqueName": "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users\\FoundItBE-Users.csproj",
         "projectName": "FoundItBE-Users",
-        "projectPath": "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users.csproj",
+        "projectPath": "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users\\FoundItBE-Users.csproj",
         "packagesPath": "C:\\Users\\jadll\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\jadll\\projects\\FoundItBE-Users\\obj\\",
+        "outputPath": "C:\\Users\\jadll\\projects\\FoundItBE-Users\\FoundItBE-Users\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\jadll\\AppData\\Roaming\\NuGet\\NuGet.Config",

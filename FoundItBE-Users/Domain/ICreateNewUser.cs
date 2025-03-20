@@ -1,6 +1,6 @@
 ﻿using FoundItBE_Users.Models;
 
-namespace FoundItBE_Users.BusinessLayer;
+namespace FoundItBE_Users.Domain;
 
 public interface ICreateNewUser
 {

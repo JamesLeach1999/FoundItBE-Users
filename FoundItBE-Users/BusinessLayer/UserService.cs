@@ -1,11 +1,17 @@
-﻿using FoundItBE_Users.Models;
+﻿using FoundItBE_Users.Domain;
+using FoundItBE_Users.Models;
 
 namespace FoundItBE_Users.BusinessLayer;
 
-public class UserService(IUserThrottlingService userThrottlingService) : IUserService
+public class UserService(IUserLoginRateLimitService userLoginRateLimitService, IPostGresRepository postGresRepository) : IUserService
 {
     public Task GetUser(UserCredentials userCredentials)
     {
-        throw new NotImplementedException();
+        if(!userLoginRateLimitService.CheckUserAttempts(userCredentials.UserName))
+        {
+            Console.WriteLine("Error");
+            return Task.CompletedTask;
+        }
+        return Task.CompletedTask;
     }
 }

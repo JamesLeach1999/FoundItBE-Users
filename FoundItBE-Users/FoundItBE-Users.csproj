@@ -4,6 +4,7 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	<LangVersion>latest</LangVersion>
     <RootNamespace>FoundItBE_Users</RootNamespace>
     <UserSecretsId>0f975be0-ba6f-44e6-8727-2677cfcc011c</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>

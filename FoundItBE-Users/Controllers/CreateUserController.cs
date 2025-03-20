@@ -5,18 +5,15 @@ using System.Net.Mime;
 using FoundItBE_Users.Models;
 using FluentValidation;
 using Npgsql;
-using FoundItBE_Users.BusinessLayer;
+using FoundItBE_Users.Domain;
 
 
 namespace FoundItBE_Users.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class CreateUserController(AbstractValidator<UserReq> userRequestValidator, ICreateNewUser createNewUserService) : Controller
+public class CreateUserController(AbstractValidator<UserReq> userRequestValidator, IPostGresRepository createNewUserService) : Controller
 {
-    private readonly AbstractValidator<UserReq> _userRequestValidator = userRequestValidator;
-    private readonly ICreateNewUser _createNewUserService = createNewUserService;
-
     [HttpPost]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType((int)HttpStatusCode.Created)]
@@ -26,14 +23,14 @@ public class CreateUserController(AbstractValidator<UserReq> userRequestValidato
     {
         try
         {
-            var validatedUser = _userRequestValidator.Validate(userReq);
+            var validatedUser = userRequestValidator.Validate(userReq);
 
             if (!validatedUser.IsValid)
             {
                 return BadRequest();
             }
 
-            await _createNewUserService.CreateUser(userReq);
+            await createNewUserService.CreateUser(userReq);
 
             return Created();
         }

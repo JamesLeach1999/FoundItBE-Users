@@ -7,7 +7,7 @@ public static class ServiceCollectionExtensions
 {
     public static IServiceCollection AddInfrastructure(this IServiceCollection services)
     {
-        services.AddScoped<IPostGresqlClient, PostGresqlClient>();
+        services.AddSingleton<IPostGresqlClient, PostGresqlClient>();
 
         return services;
     }
